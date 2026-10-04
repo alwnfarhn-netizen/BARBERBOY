@@ -1,26 +1,57 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fcfcfb; /* Off-white yang bersih dan premium */
+  --foreground: #111827; /* Gray 900 untuk teks utama */
+  --primary: #065f46; /* Emerald 800 - Hijau khas Barberboy */
+  --primary-foreground: #ffffff;
+  --secondary: #e5e7eb; /* Gray 200 - Abu muda untuk elemen sekunder */
+  --secondary-foreground: #1f2937; /* Gray 800 */
+  --muted: #f3f4f6; /* Gray 100 */
+  --muted-foreground: #4b5563; /* Gray 600 */
+  --accent: #10b981; /* Emerald 500 - Hijau cerah untuk aksen/highlight */
+  --accent-foreground: #ffffff;
+  --border: #d1d5db; /* Gray 300 */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+    --background: #0f172a; /* Slate 900 - Gelap elegan */
+    --foreground: #f8fafc; /* Slate 50 */
+    --primary: #10b981; /* Emerald 500 - Hijau lebih terang di dark mode */
+    --primary-foreground: #022c22; /* Emerald 950 */
+    --secondary: #1e293b; /* Slate 800 */
+    --secondary-foreground: #f8fafc; /* Slate 50 */
+    --muted: #1e293b; /* Slate 800 */
+    --muted-foreground: #94a3b8; /* Slate 400 */
+    --border: #334155; /* Slate 700 */
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
 }
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+
